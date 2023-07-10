@@ -1,19 +1,10 @@
-import 'package:flood_app/auth/auth.dart';
-import 'package:flood_app/auth/login_or_register.dart';
 import 'package:flood_app/theme/dark_theme.dart';
 import 'package:flood_app/theme/light_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flood_app/pages/login_page.dart';
 import 'package:flood_app/pages/register_page.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-
+void main() {
   runApp(const MyApp());
 }
 
@@ -27,7 +18,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       // theme: lightTheme,
       // darkTheme: darkTheme,
-      home: AuthPage(),
+      home: RegisterPage(),
     );
   }
 }
