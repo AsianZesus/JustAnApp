@@ -1,22 +1,20 @@
-import 'package:flutter/material.dart';
-import 'package:flood_app/components/my_textfield.dart';
-import 'package:flood_app/components/my_textfield.dart';
 import 'package:flood_app/components/my_button.dart';
+import 'package:flood_app/components/my_textfield.dart';
 import 'package:flood_app/components/square_tile.dart';
+import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
-  LoginPage({super.key});
+class RegisterPage extends StatefulWidget {
+  
+  RegisterPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   final emailController = TextEditingController();
-
   final passwordController = TextEditingController();
-
-  void signUserIn() {}
+  final confirmPasswordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
                 height: 50,
               ),
               Text(
-                'Login',
+                'Register',
                 style: TextStyle(
                     color: Colors.blueAccent[700],
                     fontSize: 26,
@@ -56,6 +54,22 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(
                 height: 15,
               ),
+              MyPasswordTextField(
+                controller: confirmPasswordController,
+                hintText: 'Confirm Password',
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              MyButton(
+                onTap: () {
+                  
+                },
+                text: 'Sign Up'
+              ),
+              const SizedBox(
+                height: 20,
+              ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
                 child: Row(
@@ -69,9 +83,9 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(
                 height: 20,
               ),
-              MyButton(
-                onTap: signUserIn,
-              ),
+              // MyButton(
+              //   // onTap: signUserIn,
+              // ),
               const SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25.0),
